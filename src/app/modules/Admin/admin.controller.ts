@@ -2,9 +2,10 @@ import { Request, Response } from "express";
 import { AdminServices } from "./admin.service";
 
 const GetAllAdmin = async (req: Request, res: Response) => {
-    try
-    {
-        const result = await AdminServices.GetAllAdmin();
+    try   {
+console.log(req.query)
+
+        const result = await AdminServices.GetAllAdmin(req.query);
   
         res.status(200).json({
             success: "true",
