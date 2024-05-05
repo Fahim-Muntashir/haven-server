@@ -9,7 +9,7 @@ const GetAllAdmin = async (req: Request, res: Response) => {
     try {
         const filters = pick(req.query, adminFilterableFields);
         
-        const options=pick(req.query,['limit','page'])
+        const options=pick(req.query,['limit','page','sortBy','sortOrder'])
 
         const result = await AdminServices.GetAllAdmin(filters,options);
   
